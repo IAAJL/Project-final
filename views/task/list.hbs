@@ -1,0 +1,56 @@
+<html>
+    <style>
+h3{
+    text-align: center;
+}
+table.centre {
+  margin-left: auto; 
+  margin-right: auto;
+}
+tbody{
+    text-align: center;
+}
+a.linking{
+   text-align: center;
+}
+</style>
+<h3>
+    <td>Task List</td>
+</h3>
+<table class="centre" width="300" border="1" cellspacing="1" cellpadding="1">
+    <thead>
+        <tr>
+            <th>Task Name</th>
+            <th></th>
+            <th>task Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+         
+        {{#each list}}
+        <tr>
+            <td>{{this.taskName}}</td>
+            <td></td>
+            <td>{{this.taskDesc}}</td>
+            <td>
+                <a href="/task/edit/{{this._id}}" onclick="return confirmation("Are you sure")">Edit</a>
+            </td>
+            <td>
+                <a href="/task/delete/{{this._id}}" onclick="return confirmation("Are you sure")">Delete</a>
+            </td>
+        </tr>
+        
+        {{/each}}
+
+    </tbody>
+</table>
+
+<tr>
+<div style="text-align: center">
+<a href="/task">
+Go Back to Main Page
+</a>
+</div>
+</tr>
+</html>
